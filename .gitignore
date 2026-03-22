@@ -11,3 +11,4 @@ clases
 *.out
 *.xml
 *.gz
+*.DS_Store
