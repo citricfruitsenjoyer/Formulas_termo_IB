@@ -1,0 +1,13 @@
+qm
+/other stuff/
+clases
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fdb*
+*.fls
+*.log
+*.out
+*.xml
+*.gz
