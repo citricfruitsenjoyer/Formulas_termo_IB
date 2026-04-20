@@ -180,6 +180,8 @@ Donde $(\cdot)_\text{out}^S$ se obtiene mediante las relaciones de Poisson (cons
   \sum\left(1-\frac{T_0}{T_k}\right)\delta Q_k - [W-P_0  dV] +\\ \sum\delta m_i\Psi_i- \delta m_e\Psi_e-X_\text{destr}=dX
 \end{gather*}
 
+PONER EFICIENCIA EXERGÉTICA!!!!!!!!!!!!!!!!
+
 \section{Potencial químico}
 
 \begin{gather*}
@@ -211,11 +213,78 @@ Donde $(\cdot)_\text{out}^S$ se obtiene mediante las relaciones de Poisson (cons
   \text{y cantidad de gas ideal.}
 \end{gather*}
 
+\section{Sistemas con más de una fase}
+
+Sist. heterógeneo: Cdo dos o más porciones del sist. tienen propiedades especificas distintas (composición, vol específico, etc).
+
+Fase: Cjto de todas las partes de un sist con mismas propiedades específicas. Un sist heteróg. tiene más de una fase.
+
+Componentes: Nro mínimo de sustancias químicas necesarias p/ describir la compos. de un determinado estado.
+
+Regla de las fases de Gibbs:
+
+Nro de propiedades intensivas independientes para determinar el estado en un sistema en equilibrio: $I = C + 2 - F$
+
+\subsection{Sustancias puras}
+
+Título termodinámico: $\displaystyle x = \frac{m_\text{gas}}{m_\text{gas}+m_\text{líq.}}=\frac{m_\text{gas}}{m}$
+
+Volúmen específico de mezcla: $\displaystyle v = \frac{V}{m}=xv_g+(1-x)v_\ell$
+
+De manera similar para otras propiedades, $\lambda = \{u,h,s,\dots\}$
+
+$\displaystyle \lambda = \frac{\Lambda}{m}=x\lambda_g+(1-x)\lambda_\ell = \lambda_\ell +\lambda_{g\ell}x$
+
+Relaciones con la función de Gibbs.
+
+\vspace{2mm}
+
+
+P = cte: $\displaystyle \frac{\partial g}{\partial T}\biggr\rvert_{P}= -s \qquad \frac{\partial^2 g}{\partial T^2}\biggr\rvert_{P}= \frac{\partial s}{\partial h}\biggr\rvert_{P}\frac{\partial g}{\partial s}\biggr\rvert_{T} = -\frac{c_P}{T}$
 
 
 
+(Decreciente cóncava hacia abajo) // footnote
 
+$\displaystyle \frac{\partial g}{\partial P}\biggr\rvert_{T} = v \qquad \frac{\partial^2 g}{\partial P^2}\biggr\rvert_{T} = \frac{\partial v}{dP}\biggr\rvert_{T} = -K_Tv$
+
+Ecuación de Clapeyron: $\displaystyle \frac{dP}{dT} = \frac{1}{T} \frac{h_G-h_L}{v_G-v_L}= \frac{1}{T} \frac{\Delta h}{\Delta v}$
+
+Ecuación de Clausius-Clapeyron $v_G \gg v_L, \quad v_G \gg v_S$:
+
+\begin{equation*}
+  \ln{\frac{P_2}{P_1}}= -\frac{\overline{\Delta h}}{R} \left( \frac{1}{T_2} - \frac{1}{T_1}\right)
+\end{equation*}
+
+\section{Aire húmedo}
+Presiones parciales: $P = P_a + P_v, \qquad \text{a=dry air, v = vapour}$
+
+Humedad absoluta: $\displaystyle \omega = \frac{m_v}{m_a}= \frac{0.622 P_v}{P-P_v}$
+
+Humedad relativa: $\displaystyle \Phi = \frac{m_v}{m_g}=\frac{P_vV/(R_vT)}{P_gV/(R_vT)}= \frac{P_v}{P_g}$
+
+\vspace{2mm}
+
+$\displaystyle \quad m_g = \text{max humedad en el aire a temp T} \quad P_g = P_\text{sat@T}$
 % \lipsum[1-3]
+
+$\displaystyle \Phi = \frac{omega P}{(0.622+\omega)P_g} \quad \longrightarrow \omega = \frac{0.622\Phi P_g}{P- \Phi P_g} $
+
+
+
+Entalpía de mezcla vapor-aire:
+
+$\displaystyle h = h_a+ \omega h_g \quad \text{(kJ/kg aire seco)}$
+
+Temperatura de rocío/ dew point : $T_{dp} = T_{\text{sat}@P_v} $
+
+\clearpage
+
+Humedad relativa y especifica a través de la temp de saturación adiabática del aire:
+
+\vspace{2mm}
+
+$\displaystyle \omega_1 = \frac{C_p(T_2-T_1)+\omega_2(h_{g_2}-h_{\ell_2})}{h_{g_1}-h_{\ell_2}} \qquad \omega_2 = \frac{0.622P_{g_2}}{P2-P_{g_2}}$
 
 
 \clearpage
