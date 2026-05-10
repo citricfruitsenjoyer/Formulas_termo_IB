@@ -8,7 +8,7 @@
 % %\bibliographystyle{plain}
 % \bibliography{sample}
 \usepackage{lipsum}
-\usepackage{biblatex}
+% \usepackage{biblatex}
 % \addbibresource{bibliografia.bib}
 % \bibliography{bibliografia}
 \usepackage{physics}
@@ -32,15 +32,15 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage[T1]{fontenc}
 % \usepackage{mathpazo} % cambiar fuente 
-\usepackage{cmbright} % cambiar fuente÷ 
+\usepackage{cmbright} % cambiar fuente
 
 \usepackage{booktabs}
 \usepackage{caption} 
 \usepackage{subcaption}
-\captionsetup[table]{skip=3pt}
-\usepackage{tabularray}
-\usepackage{fancyhdr} % Paquete para encabezados y pies de página
-\captionsetup[table]{skip=3pt}
+% \captionsetup[table]{skip=3pt}
+% \usepackage{tabularray}
+% \usepackage{fancyhdr} % Paquete para encabezados y pies de página
+% \captionsetup[table]{skip=3pt}
 \usepackage{tabularray}
 \usepackage{fancyhdr} % Paquete para encabezados y pies de página
 \usepackage{array}
@@ -55,13 +55,13 @@
 % \label{fig:ejemplo-col}
 % \end{center}
 
-\newcommand{\hamilton}{\mathcal{H}}
+% \newcommand{\hamilton}{\mathcal{H}}
 % \pagecolor{black}
 % \color{white}
 
-\newenvironment{Figure}
-  {\par\medskip\noindent\minipage{\linewidth}}
-  {\endminipage\par\medskip}
+% \newenvironment{Figure}
+%   {\par\medskip\noindent\minipage{\linewidth}}
+%   {\endminipage\par\medskip}
 
 
 
@@ -106,7 +106,8 @@
 
 \section{Dispositivos en régimen estacionario}
 \begin{gather*}
-    \text{Bomba (líquido)}-w_{\text{eje}} = h_2-h_1 = \Delta u + v\Delta P \\
+    \text{Bomba (líquido)}-w_{\text{eje}} = h_2-h_1 = \Delta u + v\Delta P\\
+    \text{Bomba ideal: } -w_\text{eje}=v\Delta P\\
     \text{Turbina: } w_{\text{eje}} = h_\text{in}-h_\text{out} = c_p (T_\text{in}-T_\text{out})\\
     \text{Intercambiador de calor: }
     \sum_{k}h_{out}^0 \dot{m}_{out}=\sum_{k}h_{in}^0 \dot{m}_{in}\\
@@ -119,7 +120,7 @@ Tobera-Difusor:
 
 \textbf{Máquina térmica:}
 \begin{center}
-\includegraphics[width=0.3\linewidth, angle =90 ]{MT.png}
+\includegraphics[width=0.25\linewidth, angle =90 ]{MT.png}
 \end{center}
 
 \section{Segundo principio}
@@ -146,6 +147,7 @@ Tobera-Difusor:
   \text{$Q_k$ respecto al volumen de control:}\\
   dS_{VC}\geq \sum_j \delta m_j + \sum_k \frac{\delta Q_k}{T_k}\\
   \text{Escrito por unidad de tiempo en régimen estacionario:}\\
+  \text{(salidas - entradas)}\\
   -\sum_j s_j \dot{m}_j = \sum_k\frac{\dot{Q}_k}{T_k}+\dot{S}_\text{gen}\\
   \text{Trabajo para una máquina en flujo estable:}\\
   w_\text{rev}=-\int_{1}^{2}vdP - \Delta k_E - \Delta p_E
@@ -235,7 +237,9 @@ De manera similar para otras propiedades, $\lambda = \{u,h,s,\dots\}$
 
 $\displaystyle \lambda = \frac{\Lambda}{m}=x\lambda_g+(1-x)\lambda_\ell = \lambda_\ell +\lambda_{g\ell}x$
 
-Relaciones con la función de Gibbs.
+Entalpía del líquido: $\displaystyle h(T,P) = h_{\ell\text{sat}}(T)+v_{\ell\text{sat}}(T)(P-P_\text{sat})$
+
+Relaciones con la función de Gibbs:
 
 \vspace{2mm}
 
@@ -250,41 +254,145 @@ $\displaystyle \frac{\partial g}{\partial P}\biggr\rvert_{T} = v \qquad \frac{\p
 
 Ecuación de Clapeyron: $\displaystyle \frac{dP}{dT} = \frac{1}{T} \frac{h_G-h_L}{v_G-v_L}= \frac{1}{T} \frac{\Delta h}{\Delta v}$
 
+\vspace{2mm}
+
+Aproximación de $v_G\gg v_L$ y gases ideales:
+
+\begin{equation*}
+  \frac{dP}{P} \approxeq \frac{\Delta \overline{h(T)}}{R}\frac{dT}{T^2}
+\end{equation*}
+
 Ecuación de Clausius-Clapeyron $v_G \gg v_L, \quad v_G \gg v_S$:
 
 \begin{equation*}
   \ln{\frac{P_2}{P_1}}= -\frac{\overline{\Delta h}}{R} \left( \frac{1}{T_2} - \frac{1}{T_1}\right)
 \end{equation*}
 
+\clearpage
+
 \section{Aire húmedo}
 Presiones parciales: $P = P_a + P_v, \qquad \text{a=dry air, v = vapour}$
 
-Humedad absoluta: $\displaystyle \omega = \frac{m_v}{m_a}= \frac{0.622 P_v}{P-P_v}$
+Humedad absoluta: 
+\begin{gather*}
+  \omega = \frac{m_v}{m_a}= \frac{0.622 P_v}{P-P_v}\longrightarrow P_v = \frac{\omega P}{0.622+\omega}  
+\end{gather*}
+
 
 Humedad relativa: $\displaystyle \Phi = \frac{m_v}{m_g}=\frac{P_vV/(R_vT)}{P_gV/(R_vT)}= \frac{P_v}{P_g}$
 
 \vspace{2mm}
 
-$\displaystyle \quad m_g = \text{max humedad en el aire a temp T} \quad P_g = P_\text{sat@T}$
+$\displaystyle \quad m_g = \text{max humedad en el aire a temp T:} \quad P_g = P_\text{sat@T}$
 % \lipsum[1-3]
 
-$\displaystyle \Phi = \frac{omega P}{(0.622+\omega)P_g} \quad \longrightarrow \omega = \frac{0.622\Phi P_g}{P- \Phi P_g} $
+$\displaystyle \Phi = \frac{\omega P}{(0.622+\omega)P_g} \longrightarrow \omega = \frac{0.622\Phi P_g}{P- \Phi P_g} $
 
+% Entalpía vapor de agua: $\displaystyle 2501.3 + 1.82T \, \left[\frac{kJ}{kg_a ^\circ C}\right]$
 
+% Entalpía de mezcla vapor-aire:
 
-Entalpía de mezcla vapor-aire:
+% $\displaystyle h = h_a+ \omega h_g \quad \text{(kJ/kg aire seco)}$
 
-$\displaystyle h = h_a+ \omega h_g \quad \text{(kJ/kg aire seco)}$
+% $\displaystyle h = 1.005T + \omega (2501.3 + 1.82T) \quad \left[\frac{kJ}{kg_a}\right],\quad T[\equiv] [^\circ C] $
+
+% Entalpía específica del agua líquida:
+
+% $h_\ell = 4.186 T,\qquad T[\equiv] [^\circ C]  $
 
 Temperatura de rocío/ dew point : $T_{dp} = T_{\text{sat}@P_v} $
 
-\clearpage
 
-Humedad relativa y especifica a través de la temp de saturación adiabática del aire:
+Curva de coexistencia de fases líq.-vapor del agua:
+\begin{equation*}
+  \ln({P_S}) = -\frac{6709.9}{T} - 4.871\ln({T})+51.415\quad P [kPa], T [K]
+\end{equation*}
+% \clearpage
 
-\vspace{2mm}
+% Humedad relativa y especifica a través de la temp de saturación adiabática del aire:
 
-$\displaystyle \omega_1 = \frac{C_p(T_2-T_1)+\omega_2(h_{g_2}-h_{\ell_2})}{h_{g_1}-h_{\ell_2}} \qquad \omega_2 = \frac{0.622P_{g_2}}{P2-P_{g_2}}$
+% \vspace{2mm}
+
+% $\displaystyle \omega_1 = \frac{C_p(T_2-T_1)+\omega_2(h_{g_2}-h_{\ell_2})}{h_{g_1}-h_{\ell_2}} \qquad \omega_2 = \frac{0.622P_{g_2}}{P2-P_{g_2}}$
+
+
+% \begin{equation*}
+%   \ln{P_s} = -\frac{6709.9}{T}=4.871\ln{T}+51.415 \quad T\equiv [K]
+% \end{equation*}
+
+Volumen específico de mezcla: $\displaystyle v = \frac{V}{m_a} \left[\frac{m^3}{kg_a}\right]$
+
+\begin{gather*}
+  v = \left(1 + \frac{m_v}{m_a }\frac{\mathcal{M}_a}{\mathcal{M}_v}\right)\frac{RT}{\mathcal{M}_aP}= \left(1+ \frac{\omega}{0.622}\right)0.287 \frac{T}{P},\\
+  T\equiv [K], P\equiv [kPa]\\
+  \text{H esp. del aire seco: }h_a = 1.005 T \left[\frac{kJ}{kg_a^\circ C}\right], \quad T_\text{ref}= 0^\circ C\\
+  \text{H esp. del vapor de H2O: }h_v = 2501.3 + 1.82T \left[\frac{kJ}{kg_v^\circ C}\right]\\
+  \text{H esp. del agua (liq.): }h_\ell = 4.186 T \left[\frac{kJ}{kg_{\text{agua}}}\right]\\
+  \text{H específica de mezcla a-v: } h = \frac{H}{m_a} = h_a + \omega h_v\\
+  h = 1.005T + \omega (2501.3 + 1.82T) \quad \left[\frac{kJ}{kg_a}\right], T[\equiv] [^\circ C]
+\end{gather*}
+
+\section{Comtibusble}
+Convención de signos: exotérmica $\rightarrow$ libera E., Q<0 $\rightarrow$ cedido.
+
+\begin{gather*}
+  \frac{n_{N_2}}{n_{O_2}} = \frac{0.79}{0.21}=3.76 \text{   Por cada mol de O2 hay 3.76 de N2}\\
+  \text{Base molar: } \frac{n_\text{air}}{n_\text{fuel}}\quad \text{Base másica: } \frac{m_\text{air}}{m_\text{fuel}} = \frac{n_\text{air}\mathcal{M}_\text{air}}{n_\text{fuel}\mathcal{M}_\text{fuel}}\\
+  \text{PE: (Porc. en Exceso)}\rightarrow O_2 \quad m_\text{air} = \left(1 + \frac{PE}{100}\right)m_\text{aire}^\text{teórico}\\
+  \text{PD: (Porc. en Déficit)}\rightarrow CO \quad m_\text{air} = \left(1 - \frac{PD}{100}\right) m_\text{aire}^\text{teórico}\\
+  \text{Balance de combustión de hidrocarburos:}\\
+  C_n H_m + x(O_2 + 3.76 N_2) \rightarrow n CO_2 + \frac{m}{2}H_2O + 3.76x N_2\\
+  x = n + m/4 \quad C_n = \frac{n}{n+y} \text{(no se que es)}\\
+  \text{Fase del awa: } P_{H_2O} = \frac{m/2}{n+m/2+y}P \quad P_{H_2O}<P_\text{sat}(T) \rightarrow \text{vap.}\\
+  \text{Entalpía: } h_i(T) -h_{f,i}^\circ(T_0) = \int_{T_0}^{T}c_P(T)dT\\
+  \text{Entalpía de reacción en cond. estándar: } aA +bB \rightarrow cC + dD \\
+  \Delta h_\text{reac}^\circ = ch_{f,C}^\circ + dh_{f,D}^\circ - [a h_{f,A}^\circ + bh_{f,B}^\circ] \equiv \sum_{i}\nu_i h_{f,i}^\circ
+\end{gather*}
+
+\section{Open RQ}
+\begin{gather*}
+  Q-W = H_\text{prod}=H_\text{react} =\sum_\text{prod} n_p h_p - \sum_\text{react}n_r h_r\\
+  Q-W = \sum_\text{prod} n_p [h_f^\circ + \Delta h (T_0 \rightarrow T)]_p - \sum_\text{react}[h_f^\circ + \Delta h (T_0 \rightarrow T)]_r\\
+  \text{Conservación de la masa: } aA +bB \rightarrow cC + dD \\
+  n_A^f = n_A^i - a\Delta z, \quad n_B^f = n_B^i - b\Delta z,\\
+  n_C^f = n_C^i + c\Delta z, \quad n_D^f = n_D^i + d\Delta z\\
+  \Delta z \equiv \text{grado de avance}\\
+  \text{Agrupando los términos de formación:}\\
+  \sum_\text{prod} n_p [h_f^\circ]_p - \sum_\text{react} n_r [h_f^\circ]_r = \Delta z  \sum_{i} \nu_i h_{f,i}^\circ = \Delta z \Delta h^\circ_f =\Delta z \Delta h^\circ_\text{react}\\
+  \nu_i \equiv \pm \text{coef. esteq. según si son prod(+) o react(-)}\\
+  Q - W = \Delta z \Delta h_\text{react}^\circ + \sum_{prod} n_p \Delta h(T_0 \rightarrow T)_p + \sum_{react} n_r \Delta h(T_0 \rightarrow T)_r
+\end{gather*}
+
+\section{RQ}
+\begin{gather*}
+  Q - W = U_\text{prod.} - U_\text{react.}\\
+  Q - W = \sum_\text{prod} n_p (h_f^\circ + \Delta h - Pv)_p - \sum_\text{react}(h_f^\circ + \Delta h- Pv)_r\\
+  \text{Gases Id.: } Q - W =\\
+  \sum_\text{prod} n_p (h_f^\circ + \Delta h )_p - \sum_\text{react}n_r(h_f^\circ + \Delta h)_r - R\left[\sum_\text{prod} n_p T_p - \sum_\text{react}T_r n_r \right]\\
+  \text{P=cte} \quad Q = \sum_\text{prod} n_p (h_f^\circ + \Delta h )_p - \sum_\text{react}n_r(h_f^\circ + \Delta h)_r 
+\end{gather*}
+
+Temperatura de llama adiabática: Combustión sin transferencia de calor al ambiente:
+
+\begin{gather*}
+  Q - W = 0 = H_\text{prod} - H_\text{react}\\
+  \sum_\text{prod} n_p \Delta h(T_p) = \sum_\text{react} n_r \Delta h(T_r) - \Delta z \Delta h_\text{react}^\circ
+\end{gather*}
+
+Cambio de entropía: Referencia a 0K (3er ley).
+\begin{gather*}
+  \text{G. I.: } s_i(T,P_i) = s^\circ(T_0,P_0)+ \int_{T_0}^{T}\frac{c_P(T)}{T}dT - R \ln(\frac{y_i P}{P_0})\\
+  \text{Bce. en sist.: } S_\text{gen} = \Delta S_\text{sist} + \Delta S_\text{env} + \sum_\text{salida}m_s s_s - \sum_\text{entrada} m_e s_e\\
+  \text{Cengel: } S_\text{gen} = S_\text{prod} - S_\text{react} - \sum\frac{Q_k}{T_k}\\
+  \text{Trabajo máximo:}\\
+  W_\text{rev} = \sum_\text{react} n_r [h_r -T_0 s_r]_r - \sum_\text{prod} n_p [h_p -T_0 s_p]_p - \sum_k Q_k \left(1-\frac{T_0}{T_k}\right)
+\end{gather*}
+
+
+
+
+
+% \lipsum[1-4]
 
 
 \clearpage
