@@ -179,7 +179,9 @@ Donde $(\cdot)_\text{out}^S$ se obtiene mediante las relaciones de Poisson (cons
   I = T_0 S_{gen}
 = T_0 \left( \Delta S_A - \sum_k \frac{Q_k}{T_k} \right)\\
   \text{Sistema dinámico:}\\
-  \sum\left(1-\frac{T_0}{T_k}\right)\delta Q_k - [W-P_0  dV] +\\ \sum\delta m_i\Psi_i- \delta m_e\Psi_e-X_\text{destr}=dX
+  \sum\left(1-\frac{T_0}{T_k}\right)\delta Q_k - [W-P_0  dV] +\\ \sum\delta m_i\Psi_i- \delta m_e\Psi_e-X_\text{destr}=dX\\
+  \text{Algo de eficiencia exergética:}\\
+  \eta_{EX} = \frac{W_\text{real}}{W_\text{u,máx}}
 \end{gather*}
 
 PONER EFICIENCIA EXERGÉTICA!!!!!!!!!!!!!!!!
@@ -333,7 +335,7 @@ Volumen específico de mezcla: $\displaystyle v = \frac{V}{m_a} \left[\frac{m^3}
 \end{gather*}
 
 \section{Comtibusble}
-Convención de signos: exotérmica $\rightarrow$ libera E., Q<0 $\rightarrow$ cedido.
+ Signos: RQ exotérmica $\rightarrow$ libera E., Q<0 $\rightarrow$ cedido.
 
 \begin{gather*}
   \frac{n_{N_2}}{n_{O_2}} = \frac{0.79}{0.21}=3.76 \text{   Por cada mol de O2 hay 3.76 de N2}\\
@@ -342,7 +344,7 @@ Convención de signos: exotérmica $\rightarrow$ libera E., Q<0 $\rightarrow$ ce
   \text{PD: (Porc. en Déficit)}\rightarrow CO \quad m_\text{air} = \left(1 - \frac{PD}{100}\right) m_\text{aire}^\text{teórico}\\
   \text{Balance de combustión de hidrocarburos:}\\
   C_n H_m + x(O_2 + 3.76 N_2) \rightarrow n CO_2 + \frac{m}{2}H_2O + 3.76x N_2\\
-  x = n + m/4 \quad C_n = \frac{n}{n+y} \text{(no se que es)}\\
+  x = n + m/4 \quad  \text{Concentr. en base seca: } C_n= \frac{n}{\sum_{j} n_{j\neq H_2O}} \\
   \text{Fase del awa: } P_{H_2O} = \frac{m/2}{n+m/2+y}P \quad P_{H_2O}<P_\text{sat}(T) \rightarrow \text{vap.}\\
   \text{Entalpía: } h_i(T) -h_{f,i}^\circ(T_0) = \int_{T_0}^{T}c_P(T)dT\\
   \text{Entalpía de reacción en cond. estándar: } aA +bB \rightarrow cC + dD \\
@@ -385,8 +387,37 @@ Cambio de entropía: Referencia a 0K (3er ley).
   \text{Bce. en sist.: } S_\text{gen} = \Delta S_\text{sist} + \Delta S_\text{env} + \sum_\text{salida}m_s s_s - \sum_\text{entrada} m_e s_e\\
   \text{Cengel: } S_\text{gen} = S_\text{prod} - S_\text{react} - \sum\frac{Q_k}{T_k}\\
   \text{Trabajo máximo:}\\
-  W_\text{rev} = \sum_\text{react} n_r [h_r -T_0 s_r]_r - \sum_\text{prod} n_p [h_p -T_0 s_p]_p - \sum_k Q_k \left(1-\frac{T_0}{T_k}\right)
+  W_\text{rev} = \sum_\text{react} n_r [h_r -T_0 s_r]_r - \sum_\text{prod} n_p [h_p -T_0 s_p]_p - \sum_k Q_k \left(1-\frac{T_0}{T_k}\right)\\
+  W_\text{rev} = \sum_\text{j} n_r h_r-  n_p h_p +\sum_\text{j} n_p T_0 s_p- n_r T_0 s_r - \sum_k Q_k \left(1-\frac{T_0}{T_k}\right)
 \end{gather*}
+
+\clearpage
+
+\section{EQ en RQ}
+
+Evol. posibles: $\displaystyle dG \rvert_{P,T}= \sum_{i} \mu_i dn_i \leq 0$
+
+Cond. de equilibrio: $\displaystyle \sum_{i}\mu_i dn_i = 0$
+
+Del bce de masa: $\displaystyle \frac{dG}{dz}\biggr\rvert_{P,T}\sum_{i}\mu_i \nu_i = 0$
+
+Potencial químico:
+\begin{gather*}
+  \mu(T,P) = \mu(T,P_0) + RT \ln(\frac{P}{P_0}), \quad \mu(T,P_0) = \mu^\circ(T)\\
+  \text{Mezcla de gases: } \mu(T,P_i) = \mu^\circ(T) + RT \ln(\frac{P_i}{P_0})  \\
+  \text{Equilibrio: } \sum_{i} \mu_i \nu_i = 0, \qquad
+  \sum_i \nu_i \mu_i ^\circ (T) = \Delta G ^\circ (T)\\
+  \text{Laburando la ec.: } K_p = \prod_i \left(\frac{P_i}{P_0}\right) = \exp(-\frac{\Delta G^\circ(T)}{RT})\\
+  K_p = \left(\frac{P}{P_0}\right)^{\Delta\nu} \prod_i y_i^{\nu_i} =
+  \left(\frac{P}{n_T P_0}\right)^{\Delta\nu} \prod_i n_i^{\nu_i}, \quad \Delta\nu = \sum_{i} \nu_i\\
+  \text{ocurre si } \ln(K_p)>7 , \text{no ocurre si } \ln(K_p)<-7
+\end{gather*}
+Distintos $K_p$ se suman logarítmicamente cuando se suma la ecuación, si n-plico una ecuación entonces $n\ln(K_p)$.
+\subsection{EQ múltiples}
+
+Para equilibrios múltiples de rq. se necesitan tantas ecuaciones como incógnitas. La regla es: ``El número de relaciones de $K_p$ necesario para determinar la composición en equilibrio de una mezcla en reacción es igual al número de especies químicas menos el número de elementos presentes en el equilibrio''.
+Ecuaciones que se usan: Balance de masa, ecuaciones de equilibrio químico y $K_p$s 
+
 
 
 
